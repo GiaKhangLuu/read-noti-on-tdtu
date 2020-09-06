@@ -111,7 +111,6 @@ const ReadAllNoti = async () => {
 }
 
 const Main = async () => {
-    console.log(process.env); 
     await Login();
     await GoToTabNews();
     await ReadAllNoti();
