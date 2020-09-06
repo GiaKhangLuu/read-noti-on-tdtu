@@ -1,7 +1,8 @@
+require('dotenv').config();
 const puppeteer = require('puppeteer');
 
-const account = 'b1800425';
-const password = 'b18004251';
+const account = process.env.USERNAME;
+const password = process.env.PASSWORD; 
 const loginURL = 'https://stdportal.tdtu.edu.vn';
 const newsURL = 'https://studentnews.tdtu.edu.vn/Home/Index';
 var browser = null;
@@ -110,6 +111,7 @@ const ReadAllNoti = async () => {
 }
 
 const Main = async () => {
+    console.log(process.env); 
     await Login();
     await GoToTabNews();
     await ReadAllNoti();
